@@ -1,6 +1,6 @@
 function wordleLogic(guess, correctWord) {
-  guess = guess.toUpperCase();
-  correctWord = correctWord.toUpperCase();
+  guess = guess.toUpperCase().trim();
+  correctWord = correctWord.toUpperCase().trim();
 
   //   console.log(guess.length);
   //   console.log(correctWord.length);
@@ -10,5 +10,10 @@ function wordleLogic(guess, correctWord) {
   } else {
     console.log("Gissning är 5 bokstäver.");
   }
+
+  guessToString = guess.split("");
+  correctWordToString = correctWord.split("");
+  console.log(guessToString);
+  console.log(correctWordToString);
 }
 wordleLogic("hello", "world");
