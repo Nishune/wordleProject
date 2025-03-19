@@ -13,6 +13,13 @@ has another length than the "secret-word".
 2. Player guess the correct word.
 -When a player guess the correct secret word, message displays.
 
+3. Test for correct characters
+-Test that checks for correct, misplaced, incorrect and repeated characters.
+
+4. Special occurences
+-Test for case sensetivity
+-Test for white space
+-Test for no matchens
 */
 
 ////
@@ -36,6 +43,28 @@ describe("wordleFeedback", () => {
 
   it("Returns a message to the player, if the guess was correct.", () => {
     const result = wordleFeedback("CYKEL", "CYKEL");
+    expect(result).toBe("Grattis! Du har gissat rätt ord!");
+  });
+
+  ////
+  //TEST 3
+  ////
+
+  it("Identifies corrrect characters on the right place", () => {
+    const result = wordleFeedback("CALLE", "CYKEL");
+    expect(result[0]).toEqual({ letter: "C", result: "correct" });
+    expect(result[1]).toEqual({ letter: "A", result: "incorrect" });
+    expect(result[2]).toEqual({ letter: "L", result: "misplaced" });
+    expect(result[3]).toEqual({ letter: "L", result: "incorrect" });
+    expect(result[4]).toEqual({ letter: "E", result: "misplaced" });
+  });
+
+  ////
+  //TEST 4
+  ////
+
+  it("Handles case sensetivity correct", () => {
+    const result = wordleFeedback("CyKeL", "cYkEl");
     expect(result).toBe("Grattis! Du har gissat rätt ord!");
   });
 });
