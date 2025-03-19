@@ -1,0 +1,24 @@
+{
+  "name": "wordleproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nishune/wordleProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nishune/wordleProject/issues"
+  },
+  "homepage": "https://github.com/Nishune/wordleProject#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
