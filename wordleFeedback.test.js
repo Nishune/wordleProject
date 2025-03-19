@@ -10,7 +10,8 @@ import wordleFeedback from "./wordleFeedback";
 -Verifies that the function return an error message when the guess
 has another length than the "secret-word".
 
-2. Correct matches
+2. Player guess the correct word.
+-When a player guess the correct secret word, message displays.
 
 */
 
@@ -32,4 +33,9 @@ describe("wordleFeedback", () => {
   ////
   //TEST 2
   ////
+
+  it("Returns a message to the player, if the guess was correct.", () => {
+    const result = wordleFeedback("CYKEL", "CYKEL");
+    expect(result).toBe("Grattis! Du har gissat rätt ord!");
+  });
 });

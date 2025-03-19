@@ -6,6 +6,10 @@ export default function wordleFeedback(guess, correctWord) {
     return `Din gissning måste innehålla ${correctWord.length} antal bokstäver.`;
   }
 
+  if (guess === correctWord) {
+    return "Grattis! Du har gissat rätt ord!";
+  }
+
   const result = [];
 
   const guessArray = guess.split("");
@@ -44,5 +48,5 @@ export default function wordleFeedback(guess, correctWord) {
   }
   return result;
 }
-const testResult = wordleFeedback("dansa", "cykla");
+const testResult = wordleFeedback("Dansa", "cykla");
 console.log(testResult);
