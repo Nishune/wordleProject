@@ -1,4 +1,4 @@
-function wordleFeedback(guess, correctWord) {
+export default function wordleFeedback(guess, correctWord) {
   guess = guess.replace(/\s/g, "").toUpperCase();
   correctWord = correctWord.replace(/\s/g, "").toUpperCase();
 
