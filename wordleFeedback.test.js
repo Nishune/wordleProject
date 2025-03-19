@@ -67,4 +67,9 @@ describe("wordleFeedback", () => {
     const result = wordleFeedback("CyKeL", "cYkEl");
     expect(result).toBe("Grattis! Du har gissat rätt ord!");
   });
+
+  it("handles whitespace correct", () => {
+    const result = wordleFeedback("C Y K E L", "CYKEL");
+    expect(result).toBe("Grattis! Du har gissat rätt ord!");
+  });
 });
