@@ -19,7 +19,6 @@ has another length than the "secret-word".
 4. Special occurences
 -Test for case sensetivity
 -Test for white space
--Test for no matchens
 */
 
 ////
@@ -72,4 +71,6 @@ describe("wordleFeedback", () => {
     const result = wordleFeedback("C Y K E L", "CYKEL");
     expect(result).toBe("Grattis! Du har gissat rätt ord!");
   });
+
+  it("");
 });
