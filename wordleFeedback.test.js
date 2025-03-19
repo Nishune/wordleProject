@@ -71,6 +71,4 @@ describe("wordleFeedback", () => {
     const result = wordleFeedback("C Y K E L", "CYKEL");
     expect(result).toBe("Grattis! Du har gissat rätt ord!");
   });
-
-  it("");
 });
