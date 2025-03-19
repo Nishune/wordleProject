@@ -1,6 +1,11 @@
 function wordleFeedback(guess, correctWord) {
   guess = guess.replace(/\s/g, "").toUpperCase();
   correctWord = correctWord.replace(/\s/g, "").toUpperCase();
+
+  if (guess.length !== correctWord.length) {
+    return `Din gissning måste innehålla ${correctWord.length} antal bokstäver.`;
+  }
+
   const result = [];
 
   const guessArray = guess.split("");
@@ -39,5 +44,5 @@ function wordleFeedback(guess, correctWord) {
   }
   return result;
 }
-const testResult = wordleFeedback("cykla", "cykla");
+const testResult = wordleFeedback("dansa", "cykla");
 console.log(testResult);
