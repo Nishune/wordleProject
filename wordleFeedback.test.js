@@ -1,10 +1,13 @@
-import { expect, describe, test } from "@jest/globals";
+import { expect, describe, it } from "@jest/globals";
 import wordleFeedback from "./wordleFeedback";
 
 /*
 //////////
 ///Test-strategy for algoritm A (wordleFeedback.js)
 /////////
+
+Here we use unit tests to test the wordleFeedback function with jest. The function is tested directly and has no "external" dependencies.
+No mocks are needed since we are not using any dynamic data. The tests we are doing are listed below.
 
 1. Length control
 -Verifies that the function return an error message when the guess
