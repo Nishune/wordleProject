@@ -16,7 +16,11 @@ has another length than the "secret-word".
 3. Test for correct characters
 -Test that checks for correct, misplaced, incorrect and repeated characters.
 
-4. Special occurences
+4. Testing the assignment example & return values.
+-Test that matches the assignment
+-Test that verifies the function returns an array with the correct structure and length
+
+5. Special occurences
 -Test for case sensetivity
 -Test for white space
 */
@@ -60,6 +64,33 @@ describe("wordleFeedback", () => {
 
   ////
   //TEST 4
+  ////
+
+  it("Matches the assignment output in the assignment", () => {
+    const result = wordleFeedback("HALLÅ", "CYKLA");
+
+    expect(result[0]).toEqual({ letter: "H", result: "incorrect" });
+    expect(result[1]).toEqual({ letter: "A", result: "misplaced" });
+    expect(result[2]).toEqual({ letter: "L", result: "incorrect" });
+    expect(result[3]).toEqual({ letter: "L", result: "correct" });
+    expect(result[4]).toEqual({ letter: "Å", result: "incorrect" });
+  });
+
+  it("Returns an array with the same length as the guess and correct structure", () => {
+    const guess = "HALLÅ";
+    const result = wordleFeedback(guess, "CYKLA");
+
+    expect(result.length).toBe(guess.length);
+
+    result.forEach((item) => {
+      expect(item).toHaveProperty("letter");
+      expect(item).toHaveProperty("result");
+      expect(["correct", "misplaced", "incorrect"]).toContain(item.result);
+    });
+  });
+
+  ////
+  //TEST 5
   ////
 
   it("Handles case sensetivity correct", () => {

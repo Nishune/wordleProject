@@ -58,7 +58,8 @@ export default function wordleFeedback(guess, correctWord) {
       }
     }
   }
+  console.log("Result array:", JSON.stringify(result, null, 2));
   return result;
 }
-const testResult = wordleFeedback("Hallå", "cykla");
+const testResult = wordleFeedback("hallå", "cykla");
 console.log(testResult);
