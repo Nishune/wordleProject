@@ -32,7 +32,7 @@ export default function wordleFeedback(guess, correctWord) {
       correctWordArray[i] = null;
 
       //if the character is not correct on this position, mark it as pending as a temporary
-      //status which will be updated in the second loop.
+      //status which will be updated in the second loop. So pending is just a "temporary" state for the character which is fixed in second loop.
     } else {
       result.push({
         letter: currentChar,
